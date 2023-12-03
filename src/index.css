@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Marvel&display=swap');
+
+html {
+  background-color: #000000;
+}
+:root {
+  font-family: 'Marvel', system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+}
+
+body {
+  margin: 0 auto;
+  padding:0 auto;
+  box-sizing: border-box;
+  color: #FFFFFF
+}

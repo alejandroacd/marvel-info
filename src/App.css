@@ -1,0 +1,12 @@
+.buttons_div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin:1em;
+}
+
+.buttons_div > button {
+    margin:1em;
+    padding:1em;
+    font-size:1em;
+}

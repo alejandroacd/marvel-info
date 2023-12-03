@@ -1,0 +1,15 @@
+.simple_card {
+    background-color: #222222;
+    width: 350px;
+    height: 550px;
+    padding:0.5em;
+    margin:1em;    
+    @media screen and (max-width: 768px) {
+        width: 450px;
+    }
+
+    img {
+        object-fit: cover;
+        width: 100%;
+    }
+}
