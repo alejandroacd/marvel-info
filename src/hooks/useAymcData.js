@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useAsyncData = (fetchFunction, character) => {
+const useAsyncData = (fetchFunction) => {
     const [data, setData] = useState()
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState()
@@ -13,14 +13,9 @@ const useAsyncData = (fetchFunction, character) => {
             setLoading(true)
             try {
                 const result = await fetchFunction(signal)
-                setData({
-                    name: result?.name,
-                    status: result?.status,
-                    gender: result?.gender,
-                    image: result?.image,
-                    species: result?.species
-                })
+                setData(result?.data?.data?.results)
             } catch (error) {
+                
                 if (!signal.aborted) {
                     setError(error)
                     setLoading(false)
@@ -33,10 +28,9 @@ const useAsyncData = (fetchFunction, character) => {
         fetchData()
 
         return () => {
-            console.log('abortado')
             abortController.abort()
         }
-    }, [character])
+    }, [])
 
     return { data, loading, error }
 }
